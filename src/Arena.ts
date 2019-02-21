@@ -13,7 +13,7 @@ class Arena implements FightClub{
         this.fighter1 = fighter1;
         this.fighter2 = fighter2;
         this.fighters = [this.fighter1, this.fighter2];
-        console.log(`welcome ${fighter1.tamName} and ${fighter2.tamName} to MORTAL KOMBAT!!!!`);
+        console.log(`%c welcome ${fighter1.tamName} and ${fighter2.tamName} to MORTAL KOMBAT!!!!`,"font-size: 2em; color:red; font-weight:bold; background:black;");
         this.initMatch();
     }
     //initialize the match!
@@ -51,15 +51,15 @@ class Arena implements FightClub{
         let foodHit: boolean = this.determineStrikeOutcome(foodWeapon, defense);
         //apply the damage
         if(foodHit===true){
-            console.log(`${attacker.getFighterName()} hits ${defender.getFighterName()} with ${foodWeapon.foodName} for ${foodWeapon.damage}!`);
+            console.log(`%c${attacker.getFighterName()} hits ${defender.getFighterName()} with ${foodWeapon.foodName} for ${foodWeapon.damage}!`,"font-size: 2em; color: red; background: black;");
             defender.takeDamage(foodWeapon.damage);
         }else{
-            console.log(`${attacker.getFighterName()} misses ${defender.getFighterName()} with ${foodWeapon.foodName}!`);
+            console.log(`%c${attacker.getFighterName()} misses ${defender.getFighterName()} with ${foodWeapon.foodName}!`,"font-size: 2em; color:green;background:yellow;");
         }
         console.log(`${attacker.getFighterName()}: ${attacker.getHP()} ${defender.getFighterName()}: ${defender.getHP()}`);
         //check for 0 and show result
         if(defender.getHP()<=0){
-            console.log(`${attacker.getFighterName()} has won!`);
+            console.log(`%c${attacker.getFighterName()} has won!`,"font-size: 3em; color:goldenrod; background:blue; border: 2px solid black;");
         }else{
             let nextAttacker: number;
             if (playerNum==0){
